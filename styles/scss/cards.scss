@@ -1,0 +1,150 @@
+@use "variables.scss";
+
+.numered-projects {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  position: relative;
+  margin: 0px 0px 0px 12px;
+  width: 100%;
+  white-space: nowrap;
+
+  &::before {
+    position: relative;
+    bottom: 0px;
+    counter-increment: item 2;
+    content: "0" counter(item) ".";
+    color: #64ffda;
+    font-family: "Fira Code", "SF Mono", "Fira Mono", "Roboto Mono", monospace;
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -5px;
+    width: 900px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: variables.$lightest-navy;
+  }
+}
+
+.cards__StyledProjectCards {
+  max-width: 1000px;
+  margin: 0px auto 0px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.project_StyledText {
+  font-size: clamp(26px, 5vw, variables.$fz-heading);
+  color: white;
+  text-align: -moz-center;
+}
+
+.project__StyledProjectText {
+  margin: 10px 0px 0px 0px;
+  max-width: 540px;
+  color: variables.$slate;
+  font-family: variables.$font-sans;
+  font-size: variables.$fz-lg;
+  text-align: initial;
+}
+
+.project-grid {
+  list-style: none;
+  margin: 30px 0px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  position: relative;
+  padding: 0px;
+
+}
+
+.projects__StyledProject {
+  position: relative;
+  cursor: default;
+
+  .project-top {
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -moz-box-align: center;
+
+  }
+
+  .project-picture {
+    border-radius: 6px 6px 6px 6px;
+    max-width: 300px;
+    max-height: 240px;
+    overflow: hidden;
+    opacity: 0.7;
+    box-shadow: rgba(245, 245, 220, 0.507) 0px 10px 30px -15px;
+    transition: all .3s;
+
+    &:hover {
+      opacity: 1;
+      outline: currentcolor none medium;
+      box-shadow: beige 0px 10px 30px -15px;
+    }
+  }
+
+  .project-title a {
+    color: variables.$lightest-slate;
+    font-size: variables.$fz-xxl;
+    margin-top: 20px;
+    font-family: variables.$font-sans;
+    font-weight: 600;
+    color: variables.$white;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      color: variables.$green;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+
+    }
+  }
+}
+
+.projects__StyledProject .project-tech-list p {
+  display: flex;
+  -moz-box-flex: 1;
+  flex-direction: row;
+  font-size: clamp(8px, 1vw, 12px);
+  font-family: variables.$font-mono;
+  color: variables.$red;
+  margin-bottom: 5px;
+}
+
+.project-inner {
+  box-shadow: 0px 30px 30px -15px variables.$navy-shadow;
+  display: flex;
+  margin-top: 40px;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  -moz-box-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  height: 100%;
+  padding: 2rem 1.75rem;
+  border-radius: 4px;
+  background-color: variables.$navy;
+  transition: all .3s;
+
+  &:hover {
+    background-color: variables.$green-tint;
+    outline: currentcolor none medium;
+    box-shadow: beige 0px 10px 30px -15px;
+  }
+}

@@ -1,0 +1,61 @@
+@use "variables.scss";
+
+.nav__StyledHeader {
+  position: fixed;
+  height: variables.$nav-height;
+  background-color: variables.$navy;
+  box-shadow: 0 10px 30px -10px variables.$navy-shadow;
+  z-index: 99;
+  visibility: visible;
+  transition: all 1000ms ease;
+  opacity: 0.85;
+  width: 100%;
+
+  &:hover {
+    box-shadow: rgba(245, 245, 220, 0.281) 0 10px 30px -10px;
+  }
+
+}
+
+.nav__StyledNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  -moz-box: justify;
+  -mod-box-align: center;
+  width: 100%;
+  font-family: variables.$font-mono;
+  counter-reset: item 0;
+
+  a {
+    text-decoration: none;
+    color: variables.$white;
+    transition: all .3s;
+
+    &:hover {
+      color: variables.$green;
+    }
+  }
+
+  ol {
+    display: flex;
+    justify-content: flex-end;
+    -moz-box-align: center;
+    list-style: none;
+    margin: 11px 19px 0px -15px;
+
+    li {
+      margin: 30px 30px 0px auto;
+      counter-increment: item 1;
+      font-size: variables.$fz-xs;
+
+      &::before {
+        content: "0" counter(item)".";
+        margin-right: 5px;
+        color: variables.$green;
+        font-size: variables.$fz-xxs;
+        text-align: right;
+      }
+    }
+  }
+}

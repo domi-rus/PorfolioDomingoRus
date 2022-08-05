@@ -1,0 +1,41 @@
+// Reset & enviroment
+
+@use "_reset.scss";
+@use "_variables.scss";
+
+// Components
+
+@use "navbar.scss";
+@use "socialElements.scss";
+@use "hero.scss";
+@use "carousel.scss";
+@use "jobs.scss";
+@use "about.scss";
+@use "contact.scss";
+@use "cards.scss";
+@use "footer.scss";
+@use "responsive.scss";
+
+html {
+  scrollbar-color: variables.$red variables.$navy;
+  scrollbar-width: thin;
+  box-sizing: border-box;
+}
+
+body {
+  color: variables.$slate;
+  font-family: variables.$font-sans;
+  font-size: variables.$fz-md;
+  line-height: 1.3;
+  background-color: variables.$navy;
+}
+
+section {
+  margin: 0px auto;
+  padding: 100px 0px;
+}
+
+::selection {
+  background-color: variables.$dark-slate;
+  color: variables.$white;
+}

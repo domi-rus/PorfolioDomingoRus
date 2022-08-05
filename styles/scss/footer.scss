@@ -1,0 +1,40 @@
+@use "variables.scss";
+
+.footer_StyledCredit {
+  color: variables.$lightest-slate;
+  font-family: variables.$font-mono;
+  font-size: variables.$fz-xxs;
+  line-height: 1.1;
+  text-align: center;
+  margin: 5px 7px;
+
+}
+
+.styled-link-refer {
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  transition: all .3s;
+  color: variables.$red;
+}
+
+.footer__toTop {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0.1em 0;
+  visibility: visible;
+
+
+  i {
+    font-size: variables.$fz-xxl;
+    color: variables.$white;
+    transition: all .3s;
+
+    &:hover {
+      color: variables.$green
+    }
+  }
+}

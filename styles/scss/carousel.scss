@@ -1,0 +1,102 @@
+@use "variables.scss";
+
+.carousel__StyledCarouselSection {
+  max-width: 1000px;
+  margin: 0px auto 0px;
+}
+
+.items {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+
+  .item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+    opacity: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.95;
+      filter: sepia(80%);
+    }
+  }
+
+  .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px;
+    z-index: 100;
+
+    .button {
+      color: variables.$red;
+      font-size: 32px;
+      cursor: pointer;
+      position: relative;
+      opacity: 1;
+      transition: all 300ms ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        z-index: -99;
+      }
+
+      &:nth-child(1) {
+        float: left;
+      }
+
+      &:nth-child(2) {
+        float: right;
+      }
+    }
+  }
+}
+
+.item.active {
+  opacity: 1;
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.178),
+    0 0 20px rgba(255, 255, 255, 0.226),
+    0 0 30px rgba(255, 255, 255, 0.205),
+    0 0 40px #64ffdb2a,
+    0 0 70px #64ffdb15,
+    0 0 80px #64ffdb38,
+    0 0 100px #64ffdb1e;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.item.prev {
+  z-index: 2;
+  opacity: 0.10;
+  transform: translate(-125%, -50%);
+}
+
+.item.next {
+  z-index: 2;
+  opacity: 0.10;
+  transform: translate(25%, -50%);
+}
